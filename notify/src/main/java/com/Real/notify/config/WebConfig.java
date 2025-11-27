@@ -12,10 +12,9 @@ public class WebConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        // Messages whose destination starts with /topic will be routed to the broker
-        config.enableSimpleBroker("/topic");
-        // Messages whose destination starts with /app will be routed to @MessageMapping
-        config.setApplicationDestinationPrefixes("/app");
+        config.enableSimpleBroker("/topic");//sends to client
+
+        config.setApplicationDestinationPrefixes("/app");//receive messages
     }
 
     @Override
